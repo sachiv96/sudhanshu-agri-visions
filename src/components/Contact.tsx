@@ -1,20 +1,8 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Twitter, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, Twitter, Send, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   const socialLinks = [
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      url: 'https://linkedin.com/in/sudhanshu-bhatt',
-      color: 'hover:text-blue-400'
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      url: 'https://github.com/sudhanshu-bhatt',
-      color: 'hover:text-gray-400'
-    },
     {
       icon: Twitter,
       label: 'Twitter',
@@ -103,7 +91,7 @@ const Contact = () => {
             {/* Social Links */}
             <div className="glow-box p-8">
               <h3 className="text-xl font-bold mb-6">Follow the Journey</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
