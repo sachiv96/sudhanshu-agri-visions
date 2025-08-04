@@ -2,39 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Sudhanshu Bhatt Portfolio Design System - Dark & Blue Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark navy background with cyan accents */
+    --background: 222 84% 5%; /* #0f172a equivalent */
+    --foreground: 210 17% 98%; /* #f5f7fa off-white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 11%; /* Slightly lighter than background */
+    --card-foreground: 210 17% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 17% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cyan primary accent */
+    --primary: 188 94% 48%; /* #22d3ee cyan-ish blue */
+    --primary-foreground: 222 84% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Purple-blue secondary */
+    --secondary: 238 84% 68%; /* #6366f1 lighter blue */
+    --secondary-foreground: 210 17% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 33% 17%; /* Dark muted */
+    --muted-foreground: 215 16% 65%; /* Muted gray */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 188 94% 48%; /* Same as primary for consistency */
+    --accent-foreground: 222 84% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 17% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 94% 48%; /* Cyan ring */
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(188 94% 48%), hsl(238 84% 68%));
+    --gradient-subtle: linear-gradient(180deg, hsl(222 84% 5%), hsl(222 47% 11%));
+    --shadow-glow: 0 0 40px hsl(188 94% 48% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(222 84% 5% / 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -56,33 +66,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode is the default theme, so same values */
+    --background: 222 84% 5%;
+    --foreground: 210 17% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 17% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 17% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 188 94% 48%;
+    --primary-foreground: 222 84% 5%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 238 84% 68%;
+    --secondary-foreground: 210 17% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 188 94% 48%;
+    --accent-foreground: 222 84% 5%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 17% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 94% 48%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +111,89 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Hero button with glow effect */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 rounded-lg font-medium;
+    @apply shadow-lg hover:shadow-[0_0_40px_hsl(188_94%_48%/0.4)] transition-all duration-300;
+    @apply hover:scale-105 active:scale-95;
+  }
+
+  /* Floating animation for quote cards */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow box for special elements */
+  .glow-box {
+    @apply bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl;
+    box-shadow: 0 8px 32px rgba(34, 211, 238, 0.1);
+  }
+
+  /* Quote card styling */
+  .quote-card {
+    @apply glow-box p-6 hover:bg-card/70 transition-all duration-300;
+    @apply hover:border-primary/40 hover:shadow-[0_8px_32px_rgba(34,211,238,0.2)];
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(188 94% 48%), hsl(238 84% 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Backdrop blur utilities */
+  .backdrop-blur-custom {
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+}
+
+/* Keyframes for animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(188 94% 48% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(188 94% 48% / 0.6);
   }
 }

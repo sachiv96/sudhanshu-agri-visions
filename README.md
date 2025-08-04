@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+# Sudhanshu Bhatt - Portfolio Website
 
-## Project info
+A modern, dark-themed portfolio website for Sudhanshu Bhatt, showcasing the intersection of agriculture and business innovation.
 
-**URL**: https://lovable.dev/projects/56ea1550-d9f5-4175-8110-0c2e3a1ce61e
+## 🌟 Features
 
-## How can I edit this code?
+- **Dark & Blue Theme**: Modern design with navy background and cyan accents
+- **Framer Motion Animations**: Smooth, professional animations throughout
+- **Responsive Design**: Mobile-first approach with hamburger navigation
+- **Interactive Elements**: 
+  - Rotating inspirational quotes
+  - Agricultural memes with personality
+  - Animated skill progress bars
+  - Floating sidebar widget
+  - Dynamic mood indicator
+- **Performance Optimized**: Fast loading with lazy loading and optimized assets
+- **Accessible**: WCAG compliant with proper contrast and alt text
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Static files (compatible with shared hosting)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/56ea1550-d9f5-4175-8110-0c2e3a1ce61e) and start prompting.
+## 📦 Installation & Development
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-**Use your preferred IDE**
+### Setup
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd portfolio-sudhanshu
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build locally
+npm run lint         # Run ESLint
+```
 
-**Use GitHub Codespaces**
+## 🏗️ Build & Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### For Hostinger Shared Hosting
 
-## What technologies are used for this project?
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
 
-This project is built with:
+2. **Prepare for upload**:
+   - The `dist/` folder contains all production files
+   - Copy contents of `dist/` folder (not the folder itself)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Upload to Hostinger**:
+   - **Method 1 - File Manager**:
+     - Login to Hostinger control panel
+     - Open File Manager
+     - Navigate to `public_html/` directory
+     - Upload all files from `dist/` folder
+   
+   - **Method 2 - FTP**:
+     - Use FileZilla or similar FTP client
+     - Connect to your hosting account
+     - Upload files to `public_html/` directory
 
-## How can I deploy this project?
+4. **Verify deployment**:
+   - Visit your domain
+   - Check that all sections load properly
+   - Test mobile responsiveness
 
-Simply open [Lovable](https://lovable.dev/projects/56ea1550-d9f5-4175-8110-0c2e3a1ce61e) and click on Share -> Publish.
+### Important Notes
+- The `.htaccess` file is included for proper SPA routing
+- All assets are optimized for shared hosting performance
+- No server-side dependencies required
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Customization
 
-Yes, you can!
+### Content Updates
+Edit `/src/data/content.ts` to update:
+- Inspirational quotes array
+- Agricultural memes
+- Skills and proficiency levels  
+- Project showcases
+- Contact information
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Theme Customization
+- **Colors**: Update `/src/index.css` CSS variables
+- **Typography**: Modify font imports in `index.html`
+- **Components**: Customize in `/src/components/` directory
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Adding New Quotes/Memes
+```typescript
+// In src/data/content.ts
+export const quotes = [
+  "Your new inspirational quote here...",
+  // ... existing quotes
+];
+
+export const memes = [
+  {
+    text: "When someone asks about...",
+    subtitle: "Relatable agriculture humor!",
+    emoji: "🌾"
+  },
+  // ... existing memes
+];
+```
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px (hamburger menu, stacked layout)
+- **Tablet**: 768px - 1024px (adjusted spacing)
+- **Desktop**: 1024px+ (full sidebar, multi-column layout)
+- **Large Desktop**: 1280px+ (floating sidebar widget)
+
+## 🔧 Performance Optimizations
+
+- **Image Loading**: Lazy loading with proper alt text
+- **Code Splitting**: Automatic with Vite
+- **CSS Optimization**: Tailwind purges unused styles
+- **Caching**: Browser caching headers in `.htaccess`
+- **Compression**: GZIP compression enabled
+
+## 🌐 Browser Support
+
+- Chrome (last 2 versions)
+- Firefox (last 2 versions) 
+- Safari (last 2 versions)
+- Edge (last 2 versions)
+
+## 📄 License
+
+This project is personal portfolio code. Feel free to use as inspiration but please don't copy directly.
+
+## 🤝 Contact
+
+**Sudhanshu Bhatt**
+- Email: sudhanshu.bhatt@email.com
+- LinkedIn: [linkedin.com/in/sudhanshu-bhatt](https://linkedin.com/in/sudhanshu-bhatt)
+- GitHub: [github.com/sudhanshu-bhatt](https://github.com/sudhanshu-bhatt)
+
+---
+
+Built with ❤️ by Sudhanshu Bhatt | Agriculture thinker. Business doer.
